@@ -5,6 +5,7 @@ body{
     align-items: center;
     min-height: 100vh;
     background-color: #fc1e8a;
+    user-select: none;
 }
 /* Propriedades container */
 .container{
@@ -29,7 +30,7 @@ h2{
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-/* Propriedades CSS botão reset */
+/* Propriedades botão reset */
 .reset{
     padding: 15px 20px;
     width: 100%;
@@ -48,7 +49,7 @@ h2{
     color: red;
     background-color: black;
 }
-
+/* Propriedades do game, onde ficam os cards */
 .game{
     width: 432px;
     height: 432px;
@@ -60,6 +61,7 @@ h2{
     perspective: 500px;
 }
 
+/* Propriedades dos cards */
 .item{
     position: relative;
     height: 100px;
@@ -68,4 +70,27 @@ h2{
     display: flex;
     justify-content: center;
     background-color: #fff;
+    font-size: 3em;
+    transform: rotateY(180);
+    transition: 0.25s;
+}
+
+/* Propriedades de um pseudo-elemento, no caso serve para esconder os cards */
+.item::after{
+    content: "";
+    position: absolute;    /*Define a posição do pseudo-elemento como absoluta em relação ao elemento pai */
+    inset: 0;              /*Deixa exatamente iguais o top e right do elemento pai */
+    background: #404040;
+    transition: 0.25s;     /*Aplica uma transição de 0.25 segundos a todas as propriedades que mudam ao longo do tempo.*/
+    transform: rotateY(0deg); /*define a rotação ao longo do eixo Y como 0 graus*/
+    backface-visibility: hidden; /*esconde o lado traseiro (backface) do elemento quando girado */
+}
+
+/* Propriedade do boxOpen, quando usuário clicar em algum card, o card se transforma em um boxOpen */
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after{
+    transform: rotateY(180deg);
 }
