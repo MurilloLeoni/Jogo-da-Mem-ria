@@ -1,0 +1,71 @@
+/* Propriedades Body */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fc1e8a;
+}
+/* Propriedades container */
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg,
+    #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff9 100%
+    );
+    padding: 40px 60px;
+}
+/* Propriedades H2 */
+h2{
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+/* Propriedades CSS botão reset */
+.reset{
+    padding: 15px 20px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+/* Quando clicar no botão de reset, ele altera de cor */
+.reset:focus{
+    color: red;
+    background-color: black;
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
