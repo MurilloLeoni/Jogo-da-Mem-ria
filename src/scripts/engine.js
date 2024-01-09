@@ -40,9 +40,26 @@ function handleClick(){
         openCards.push(this);
     }
     if(openCards.length == 2){         //Condição para checar se os cards são iguais
-        settimeout(checkMatch,500);
+        setTimeout(checkMatch, 500);
     }
+    console.log(openCards);
 }
 
-function checkMatch(){}
+//Função para verificar se os cards são iguais
+function checkMatch(){
+    if(openCards[0].innerHTML === openCards[1].innerHTML){ //se são iguais é adicionado a classe = "boxMatch"
+        openCards[0].classList.add("boxMatch");
+        openCards[1].classList.add("boxMatch");
+    }else{
+        openCards[0].classList.remove("boxOpen");         //se não são iguais é removido a classe = "boxOpen"
+        openCards[1].classList.remove("boxOpen");
+    }
+
+    openCards = []; //resetar o vetor para passar denovo pela condição
+
+    if(document.querySelectorAll(".boxMatch").length === emojis.length) //Seleciona todos que tem boxMatch e compara com tamanho de emojis, se for igual o usuário vence.
+    {
+        alert("Você venceu!");
+    }
+}
 
