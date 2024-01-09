@@ -94,3 +94,15 @@ h2{
 .boxMatch::after{
     transform: rotateY(180deg);
 }
+
+#time-left{
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.menu-time{
+    font-size: 7px;
+    margin-left: 50px;
+    margin-bottom: 86vh;
+    border: 1px solid #fff;
+}

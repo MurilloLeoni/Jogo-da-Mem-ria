@@ -60,6 +60,28 @@ function checkMatch(){
     if(document.querySelectorAll(".boxMatch").length === emojis.length) //Seleciona todos que tem boxMatch e compara com tamanho de emojis, se for igual o usuário vence.
     {
         alert("Você venceu!");
+        return;
+    }
+}
+
+const state = {
+    view: {
+        timeLeft: document.querySelector("#time-left"),
+    },
+    values:{
+        currentTime: 45,
+    },
+    actions:{
+        countDownTimerId: setInterval(countDown, 1000),
+    }
+};
+
+function countDown(){
+    state.values.currentTime--;
+    state.view.timeLeft.textContent = state.values.currentTime;
+
+    if(state.values.currentTime <= 0){
+        alert("Game Over! Acabou o tempo");
     }
 }
 
